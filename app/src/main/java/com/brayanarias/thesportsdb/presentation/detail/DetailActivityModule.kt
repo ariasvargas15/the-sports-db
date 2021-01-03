@@ -1,6 +1,6 @@
-package com.brayanarias.thesportsdb.presentation.main
+package com.brayanarias.thesportsdb.presentation.detail
 
-import com.brayanarias.thesportsdb.GetTeamsByLeague
+import com.brayanarias.thesportsdb.GetEventsByTeam
 import com.brayanarias.thesportsdb.data.repository.SportsRepository
 import dagger.Module
 import dagger.Provides
@@ -10,8 +10,8 @@ import dagger.hilt.android.components.ActivityRetainedComponent
 
 @Module
 @InstallIn(ActivityRetainedComponent::class)
-internal class MainActivityModule {
+class DetailActivityModule {
     @Provides
-    fun getTeamsByLeague(sportsRepository: SportsRepository) =
-        GetTeamsByLeague(sportsRepository)
+    fun getEventsByTeam(sportsRepository: SportsRepository) = GetEventsByTeam(sportsRepository)
+
 }

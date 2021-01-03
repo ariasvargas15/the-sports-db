@@ -9,7 +9,7 @@ import com.brayanarias.thesportsdb.domain.Team
 import com.brayanarias.thesportsdb.presentation.commons.ScopedViewModel
 import kotlinx.coroutines.launch
 
-class MainViewModel @ViewModelInject constructor(
+class ListTeamsViewModel @ViewModelInject constructor(
     private val getTeamsByLeague: GetTeamsByLeague,
 ) : ScopedViewModel() {
 

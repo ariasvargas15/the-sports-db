@@ -3,4 +3,10 @@
     <string name="api_key">1</string>
     <string name="team_name">Team name</string>
     <string name="stadium_name">Stadium name</string>
+    <string name="description">Description</string>
+    <string name="foundation_year">Foundation year</string>
+    <string name="event_name">Event name</string>
+    <string name="date">Date</string>
+    <string name="next_events">Next events</string>
+    <string name="time">time</string>
 </resources>

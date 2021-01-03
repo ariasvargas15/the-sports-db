@@ -29,9 +29,9 @@ class TeamAdapter(private val listener: (Team) -> Unit) :
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(team: Team) {
-            val name = "Equipo: " + team.name
+            val name = "Team: " + team.name
             itemView.teamName.text = name
-            val estadio = "Estadio: " + team.name
+            val estadio = "Stadium: " + team.stadium
             itemView.teamStadium.text = estadio
             Glide.with(itemView.context).load(team.badge).into(itemView.image)
         }

@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TheSportsDB">
         <activity android:name=".presentation.detail.DetailActivity"></activity>
-        <activity android:name=".presentation.main.MainActivity">
+        <activity android:name=".presentation.main.ListTeamsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -6,19 +6,16 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import com.brayanarias.thesportsdb.GetTeamsByLeague
 import com.brayanarias.thesportsdb.R
-import com.brayanarias.thesportsdb.domain.Team
 import com.brayanarias.thesportsdb.presentation.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
-import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class ListTeamsActivity : AppCompatActivity() {
 
     private lateinit var adapter: TeamAdapter
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: ListTeamsViewModel by viewModels()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,14 +30,14 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun updateUi(uiModel: MainViewModel.UiModel) {
-        progress.visibility = if (uiModel is MainViewModel.UiModel.Loading) View.VISIBLE else View.GONE
+    private fun updateUi(uiModel: ListTeamsViewModel.UiModel) {
+        progress.visibility = if (uiModel is ListTeamsViewModel.UiModel.Loading) View.VISIBLE else View.GONE
         when(uiModel){
-            is MainViewModel.UiModel.Content -> {
+            is ListTeamsViewModel.UiModel.Content -> {
                 adapter.teams = uiModel.teams
                 adapter.notifyDataSetChanged()
             }
-            is MainViewModel.UiModel.Navigation -> {
+            is ListTeamsViewModel.UiModel.Navigation -> {
                 val intent = Intent(this, DetailActivity::class.java).apply {
                     putExtra(DetailActivity.TEAM, uiModel.team)
                 }
