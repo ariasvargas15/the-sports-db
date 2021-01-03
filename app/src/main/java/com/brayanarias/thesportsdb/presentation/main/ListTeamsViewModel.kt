@@ -13,13 +13,12 @@ class ListTeamsViewModel @ViewModelInject constructor(
     private val getTeamsByLeague: GetTeamsByLeague,
 ) : ScopedViewModel() {
 
-    lateinit var leagueName: String
+     var leagueName: String = ""
 
     private val _model = MutableLiveData<UiModel>()
     val model: LiveData<UiModel>
         get() {
             if (_model.value == null) listTeams()
-            Log.e("error", _model.value.toString())
             return _model
         }
 
@@ -33,12 +32,11 @@ class ListTeamsViewModel @ViewModelInject constructor(
         initScope()
     }
 
-    private fun listTeams() {
+    fun listTeams() {
         launch {
             _model.value = UiModel.Loading
             val list = getTeamsByLeague.invoke(leagueName)
             _model.value = UiModel.Content(list)
-            Log.e("eeo", list.toString())
         }
     }
 

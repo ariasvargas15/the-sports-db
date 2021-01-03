@@ -1,6 +1,7 @@
 package com.brayanarias.thesportsdb.framework.di
 
 import com.brayanarias.thesportsdb.data.repository.SportsRepository
+import com.brayanarias.thesportsdb.data.source.ApiKeyDataSource
 import com.brayanarias.thesportsdb.data.source.LocalDataSource
 import com.brayanarias.thesportsdb.data.source.RemoteDataSource
 import dagger.Module
@@ -17,6 +18,6 @@ class DataModule {
     fun sportsRepositoryProvider(
         localDataSource: LocalDataSource,
         remoteDataSource: RemoteDataSource,
-        @Named("apiKey") apiKey: String
+        apiKey: ApiKeyDataSource
     ) = SportsRepository(localDataSource, remoteDataSource, apiKey)
 }
