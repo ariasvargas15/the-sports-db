@@ -9,4 +9,5 @@
     <string name="date">Date</string>
     <string name="next_events">Next events</string>
     <string name="time">time</string>
+    <string name="title">Title</string>
 </resources>
