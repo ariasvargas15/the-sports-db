@@ -1,7 +1,6 @@
 package com.brayanarias.thesportsdb.domain
 
-class League (
+data class League(
     val name: String,
     val teams: List<Team>
-        ) {
-}
+)

@@ -2,10 +2,9 @@ package com.brayanarias.thesportsdb.domain
 
 import java.util.*
 
-class Event (
+data class Event(
     val id: String,
     val name: String,
-    val date: Date,
+    val date: String,
     val idTeam: String
-        ){
-}
+)

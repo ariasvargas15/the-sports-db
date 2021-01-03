@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">The Sports DB</string>
     <string name="api_key">1</string>
+    <string name="team_name">Team name</string>
+    <string name="stadium_name">Stadium name</string>
 </resources>

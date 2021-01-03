@@ -1,7 +1,11 @@
-package com.brayanarias.thesportsdb.domain
+package com.brayanarias.thesportsdb.framework.db.entities
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
 data class Team(
-    val id: String,
+    @PrimaryKey val id: String,
     val name: String,
     val stadium: String,
     val badge: String,

@@ -11,13 +11,13 @@ class SportsRepository (
     private val apiKey: String
         ){
 
-    suspend fun getTeamsByLeague(nameLeague: String): List<Team> {
-        if(localDataSource.teamsIsEmpty(nameLeague)) {
-            val teams = remoteDataSource.getTeamsByLeague(nameLeague, apiKey)
+    suspend fun getTeamsByLeague(leagueName: String): List<Team> {
+        if(localDataSource.teamsIsEmpty(leagueName)) {
+            val teams = remoteDataSource.getTeamsByLeague(leagueName, apiKey)
             localDataSource.saveTeams(teams)
         }
 
-        return localDataSource.getTeams(nameLeague)
+        return localDataSource.getTeams(leagueName)
     }
 
     suspend fun getEventsByTeam(idTeam: String): List<Event> {
