@@ -1,4 +1,4 @@
-package com.brayanarias.thesportsdb.presentation
+package com.brayanarias.thesportsdb.presentation.main
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,6 @@ import com.brayanarias.thesportsdb.R
 import com.brayanarias.thesportsdb.domain.Team
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_team.view.*
-import java.util.*
 
 class TeamAdapter(private val listener: (Team) -> Unit) :
     RecyclerView.Adapter<TeamAdapter.ViewHolder>() {
@@ -33,7 +32,7 @@ class TeamAdapter(private val listener: (Team) -> Unit) :
             val name = "Equipo: " + team.name
             itemView.teamName.text = name
             val estadio = "Estadio: " + team.name
-            itemView.teamStadium.text = team.stadium
+            itemView.teamStadium.text = estadio
             Glide.with(itemView.context).load(team.badge).into(itemView.image)
         }
 

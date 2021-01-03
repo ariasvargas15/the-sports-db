@@ -1,5 +1,7 @@
 package com.brayanarias.thesportsdb.domain
 
+import java.io.Serializable
+
 data class Team(
     val id: String,
     val name: String,
@@ -14,4 +16,4 @@ data class Team(
     val twitter: String,
     val youtube: String,
     val leagueName: String
-)
+) : Serializable
